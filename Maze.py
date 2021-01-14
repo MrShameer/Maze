@@ -105,19 +105,19 @@ def screen():
 		block = w.create_rectangle(dist/5+dist*col+start,dist/5+dist*row+start,(dist*col+dist+start)-dist/5,(dist*row+dist+start)-dist/5,outline="#fb0", fill="#fb0")
 	def key_pressed(event):
 		nonlocal spot
-		if event.char == 'w':
+		if event.char == 'w' or event.keysym=='Up':
 			if cell[spot][north] == s*s:
 				spot -= s
 				move(spot)
-		elif event.char == 's':
+		elif event.char == 's' or event.keysym=='Down':
 			if cell[spot][south] == s*s:
 				spot += s
 				move(spot)
-		elif event.char == 'd':
+		elif event.char == 'd' or event.keysym=='Right':
 			if cell[spot][east] == s*s:
 				spot += 1
 				move(spot)
-		elif event.char == 'a':
+		elif event.char == 'a' or event.keysym=='Left':
 			if cell[spot][west] == s*s:
 				spot -= 1
 				move(spot)
